@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var sum=0
+        function count(m) {
+            //       i=0   i<5    循环，如果有数字大于零和小于5就自身加一
+            for (var i = 0;i <= m; i++){
+                // i求和1+2+3+4+5
+                sum +=i;
+            }
+            // 返回值，返回到实参里也就是返回到count（5）
+            return sum;
+        }
+        // 变量，设置名字要不在控制台显示不出来
+        var result =count(5);
+        console.log(result);
+    </script>
+</body>
+
+</html>

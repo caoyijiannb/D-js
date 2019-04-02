@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+        <div id="app">
+                <div>
+                    <label>Id:
+                        <input type="text" v-model='id'>
+                    </label>
+                    <label>Name:
+                        <input type="text" v-model='name'>
+                    </label>
+                    <input type="button" value="添加" v-on:click="add">
+                    <input type="button" value="删除" @click="list.splice(index,1)">
+                </div>
+                <p v-for="item in list" v-show="flag">
+                    <input type="checkbox">
+                    {{ item.id }}-------{{ item.name }}
+                </p>
+            </div>
+            <script src="vue.js "></script>
+        
+            <script>
+                new Vue({
+                    el: '#app',
+                    data: {
+                        id: '',
+                        name: '',
+                        list: [
+                            { id: 1, name: '苹果' },
+                            { id: 2, name: '鸭梨' },
+                            { id: 3, name: '樱桃' }
+                        ],
+                        flag: true
+                    },
+                    methods: {
+                        add() {
+                            this.list.push({ id: this.id, name: this.name })
+                        },
+                        
+                    }
+                })
+            </script>
+</body>
+</html>

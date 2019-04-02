@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var date = new Date("2019/6/6");
+        var date2 = new Date();
+        var datetime =date.getTime();
+        var date2time =date2.getTime();
+        var sum = datetime-date2time;
+        var sumdate= sum/1000/60/60/24;
+        var sumfen = sum/1000%60%60;
+        var summiao = sum/1000%60;
+        console.log(Math.floor(sumdate)+"天");
+        console.log(sumfen+"分");
+        console.log(summiao+"秒");
+    </script>
+</body>
+</html>

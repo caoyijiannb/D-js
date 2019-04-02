@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <body>
+    <div id="app">
+        <span>{{hours}}</span>:
+        <span>{{minutes}}</span>:
+        <span>{{seconds}}</span>
+    </div>
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                hours: '',
+                minutes: '',
+                seconds: '',
+            },
+            created() {
+                let target = new Date("2019-6-6").getTime(); //获取目标时间戳
+                setInterval(() => {
+                    // 获取今天的时间
+                    let date = new Date();
+                    // 把现在的小时放进了hours
+                    let hours = date.getHours();
+                    // 把现在的分钟放进了minutes里
+                    let minutes = date.getMinutes();
+                    // 把现在的秒数放进了seconds
+                    let seconds = date.getSeconds();
+                    // 利用this关键字和上面的hours进行连接，把刚刚证出来的小时拿下来给到扇面的hours里
+                    // this关键字直接可以和上面的hours进行连接
+                    this.hours = hours;
+                     // 利用this关键字和上面的minutes进行连接，把刚刚证出来的小时放进上面的minutes里
+                    // this关键字直接可以和上面的minutes进行连接
+                    this.minutes = minutes;
+                     // 利用this关键字和上面的seconds进行连接，把刚刚证出来的小时放进上面的seconds里
+                    // this关键字直接可以和上面的seconds进行连接
+                    this.seconds = seconds;
+                }, 1000)
+            }
+        })
+    </script>
+</body>
+</html>

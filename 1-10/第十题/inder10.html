@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var array =[5,50,6,11,18,62,31,52,19]
+        // 控制比较的轮数
+        for(var i=0;i<array.length-1;i++){
+            // 控制每一轮比较的次数     第一轮减一
+            for(var j=0;j<array.length-1-i;j++){
+                // 判断如果前边比后变大就交换位置/改变大于号小于号就是改变正序和倒序
+                if(array[j]>array[j+1]){
+                    // 把第一个位置上的值给到新建的值上去，这时第一个没有东西了再把第二个上的值给到第一个上去；这时array上没东西了再把temp返回到第二个去；
+                    var temp =array[j]
+                    array[j]=array[j+1]
+                    array[j+1]=temp
+                }
+            }
+        }
+        console.log(array)
+    </script>
+</body>
+</html>

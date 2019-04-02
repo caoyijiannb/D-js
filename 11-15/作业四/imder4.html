@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        a{
+            text-decoration: none;
+            color: #000;
+            border: solid 1px red;
+        }
+    </style>
+</head>
+<body>
+    <!-- 即使一个起始的图片也是点击按钮时必不可少的一个条件 -->
+    <img src="img/yule-1.png" id="c">
+    <a id="var" href="#">1</a>
+    <a id="gab" href="#">2</a>
+    <a id="li" href="#">3</a>
+    <a id="gtr" href="#">4</a>
+    <a id="rpg" href="#">5</a>
+
+
+    <script>
+        // 想要切换的最开始的图片
+        var p=document.querySelector('#c')
+        // 想要和第一个图片建造联系
+        var f=document.querySelector('#var')
+        // 想要和html的按钮建造联系
+        var h=document.querySelector('#gab')
+        // 想要和html的按钮建造联系
+        var o=document.querySelector('#li')
+        // 想要和html的按钮建造联系
+        var m=document.querySelector('#gtr')
+        // 想要和html的按钮建造联系
+        var l=document.querySelector('#rpg')
+
+
+        // 点击按钮通过函数来改变图片的路径
+        f.onclick=function(){
+            p.src="img/Unofficial_JavaScript_logo_2.svg.png"
+        }
+        h.onclick=function(){
+            p.src="img/session.png"
+        }
+        o.onclick=function(){
+            p.src="img/java-script.jpg"
+        }
+        m.onclick=function(){
+            p.src="img/EWWZBag.jpg"
+        }
+        l.onclick=function(){
+            p.src="img/06-2.png"
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .list li {
+            list-style: none;
+            float: left;
+            width: 30px;
+            height: 30px;
+            border: 1px solid red;
+            line-height: 30px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+<div id="app">
+    <!-- 绑定属性 -->
+    <img :src="url" alt="">
+    <ul class="list">
+        <!-- 循环里边的值 通过list和数组进行连接   绑定点击事件，点击事件的命名，通过v-for便利数组和下面那的list里面的img做链接   通过插值的方式和下面的label进行连接  -->
+        <li v-for="value in list" @click="changeImg(value.Url)">{{value.label}}</li>
+    </ul>
+</div>
+<script src="vue.js"></script>
+<script>
+    new Vue({
+        el:"#app",
+        data:{
+            url:"3.jpg",
+            list:[
+                {
+                    label:"1",
+                    Url:"捕3.jpg"
+                },
+                {
+                    label:"2",
+                    Url:"ad.jpg"
+                },
+                {
+                    label:"3",
+                    Url:"4.jpg"
+                },
+                {
+                    label:"4",
+                    Url:"2.jpg"
+                },
+                {
+                    label:"5",
+                    Url:"捕获.jpg"
+                },
+            ]
+        },
+        methods:{
+            changeImg(url){
+                this.url = url;
+            }
+        }
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <input type="text" placeholder="添加水果的名字">
+        <button>添加</button>
+        <ul>
+            <li>香蕉 <span class="del">删除</span></li>
+            <li>苹果 <span class="del">删除</span></li>
+            <li>鸭梨 <span class="del">删除</span></li>
+        </ul>
+    <script src="jquery.js"></script>
+    <script>
+        // 添加按钮的事件
+        $("button").click(function(){
+            var $li = $("<li>");
+            var text= $("input").val()
+            // 先创建的li标签的文本节点设置常文本框输入的那个
+            $li.text(text)
+            var del=("<span class='del'> 删除</span>")
+            $li.append($del)
+            // 新建的li插入到ul里
+            $("ul").append($li)
+        })
+        $(".del").click(function(){
+            $(this).parent().remove();
+        })
+    </script>
+</body>
+</html>

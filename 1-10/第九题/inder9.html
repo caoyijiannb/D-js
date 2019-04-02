@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+  <div align="center">
+    <input type="button" value="开始点名" onclick="students()" class="ks"/>
+    <input type="button" value="停止点名" onclick="stop()" class="ks" id="nu"/>
+    <hr color="blue">
+    <br>
+    <div id="div1" align="center">随机点名区域</div>
+  </div>
+
+  <script>
+      var i = 0;
+      //t用来接收setTimeOut()的返回值
+      var t=[];
+      var st = ['张三','李四', '老王','旺财','铁柱', '王八','来福','小明','小红','狗蛋','SB.Child'];
+      var u=[];
+      //点名函数
+      function students()
+      {
+        var num = Math.floor(Math.random()*st.length);
+        u = st[num];
+        document.getElementById("div1").innerHTML = u ;
+        t = setTimeout("students()", 100);
+      }
+      //停止点名函数
+      function stop()
+      {
+        clearTimeout(t);
+      }
+      </script>
+   
+</body>
+</html>

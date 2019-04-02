@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 命名arr，在arr里面存字符串
+        var arr =[5,10,6,11,18,22,31,52,19];
+        // 在命名一个空数组，以后把筛选出来的数存到空数组里
+        var content2 =[];
+        for (var i = 1; i < arr.length; i++){
+            if(arr[i]%2==0)
+            // 括号里边存的是已经判断完的元素把里面的值通过push这关键字给到点以前的数组的命名，也就是空数组里
+            content2.push(arr[i])
+        }
+        console.log(content2)
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h1>{{Name}}</h1>
+        <button @click="getName">点名</button>
+    </div>
+    <script>
+        new Vue({
+            el:"#app",
+            data:{
+                nameList:["小明","小亮","小红","老王"],
+                Name:'同学名字'
+            },
+            methods:{
+                getName(){
+                    // 在数组中提取一个数组放进name里    通过中括号里的构建的一个函数来起到转折的作用
+                    this.Name = this.nameList[this.getRandom()];
+                },
+                getRandom(){
+                    // 通过return把在数组里随即出来的值跟新到name中
+                    return Math.floor(Math.random() * this.nameList.length)
+                }
+            }
+        })
+    </script>
+</body>
+
+</html> 
